@@ -1,0 +1,10 @@
+{
+    "plugins": [
+      "react",
+      "react-native"
+    ],
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "extends": "airbnb"
+}

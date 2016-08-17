@@ -7,6 +7,9 @@
     "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
   "dependencies": {
+    "eslint": "^3.3.1",
+    "eslint-plugin-react": "^6.1.1",
+    "eslint-plugin-react-native": "^2.0.0",
     "react": "15.2.1",
     "react-native": "0.31.0"
   },
