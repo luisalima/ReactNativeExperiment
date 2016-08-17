@@ -5,13 +5,14 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 
 class ReactNativeExperiment extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <Text style={styles.title}>
           Font experiments
         </Text>
@@ -36,14 +37,19 @@ class ReactNativeExperiment extends Component {
         </Text>
         <View style={styles.text7view}>
           <Text
-            ellipsizeMode={'tail'}
-            numberOfLines={3}
+            // ellipsizeMode={'tail'}
+            // numberOfLines={10}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+
           </Text>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -51,9 +57,12 @@ class ReactNativeExperiment extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#FFF',
+    paddingVertical: 20
+  },
+  contentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFF',
   },
   title: {
     fontWeight: 'bold',
