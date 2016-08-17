@@ -7,6 +7,9 @@ import {
   TouchableHighlight
 } from 'react-native';
 
+import FontExperiments from './FontExperiments'
+import ImageExperiments from './ImageExperiments'
+
 export default class ExperimentList extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
@@ -19,8 +22,8 @@ export default class ExperimentList extends Component {
 
   items() {
     return [
-      { name: 'FontExperiments', title: 'Font experiments' },
-      { name: 'ImageExperiments', title: 'Image experiments' }
+      { component: FontExperiments, title: 'Font experiments' },
+      { component: ImageExperiments, title: 'Image experiments' }
     ];
   }
 
@@ -31,11 +34,12 @@ export default class ExperimentList extends Component {
           Experiments!
         </Text>
         {this.items().map((item, index) => {
+          console.log(item);
           return (
             <TouchableHighlight
               key={index}
               style={styles.button}
-              onPress={ () => this.props.navigator.push({name: item.name}) }
+              onPress={ () => this.props.navigator.push(item) }
             >
               <Text>{item.title}</Text>
             </TouchableHighlight>

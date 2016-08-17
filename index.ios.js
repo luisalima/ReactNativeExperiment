@@ -8,26 +8,18 @@ import {
 } from 'react-native';
 
 import ExperimentList from './ios/ExperimentList'
-import FontExperiments from './ios/FontExperiments'
-import ImageExperiments from './ios/ImageExperiments'
 
 class ReactNativeExperiment extends Component {
   renderScene(route, navigator) {
-    switch(route.name) {
-    case 'ExperimentList':
-      return <ExperimentList navigator={navigator} />;
-    case 'FontExperiments':
-      return <FontExperiments navigator={navigator} />;
-    case 'ImageExperiments':
-      return <ImageExperiments navigator={navigator} />;
-    }
+    let RouteComponent = route.component;
+    return <RouteComponent navigator={navigator} {...route.passProps} />;
   }
 
   render() {
     return (
       <Navigator
         style={{flex: 1, padding: 10}}
-        initialRoute={{name: 'ExperimentList'}}
+        initialRoute={{component: ExperimentList}}
         renderScene={ this.renderScene }
       />
     );
