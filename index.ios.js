@@ -6,8 +6,10 @@ import {
   Navigator,
   StyleSheet
 } from 'react-native';
-import FontExperiments from './ios/FontExperiments'
+
 import ExperimentList from './ios/ExperimentList'
+import FontExperiments from './ios/FontExperiments'
+import ImageExperiments from './ios/ImageExperiments'
 
 class ReactNativeExperiment extends Component {
   renderScene(route, navigator) {
@@ -16,6 +18,8 @@ class ReactNativeExperiment extends Component {
       return <ExperimentList navigator={navigator} />;
     case 'FontExperiments':
       return <FontExperiments navigator={navigator} />;
+    case 'ImageExperiments':
+      return <ImageExperiments navigator={navigator} />;
     }
   }
 

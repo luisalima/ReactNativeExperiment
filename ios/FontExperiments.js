@@ -11,13 +11,7 @@ export default class FontExperiments extends Component {
     title: PropTypes.string.isRequired,
     navigator: PropTypes.object.isRequired
   }
-  //
-  // constructor(props, context) {
-  //   super(props, context);
-  //   this._onForward = this.onForward.bind(this);
-  //   this._onBack = this._onBack.bind(this);
-  // }
-  //
+
   static defaultProps = {
     title: 'Font experiments'
   };
