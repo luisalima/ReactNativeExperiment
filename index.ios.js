@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Navigator,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight,
+  Text
 } from 'react-native';
 
 import ExperimentList from './ios/ExperimentList'
@@ -12,7 +14,11 @@ import ExperimentList from './ios/ExperimentList'
 class ReactNativeExperiment extends Component {
   renderScene(route, navigator) {
     const RouteComponent = route.component;
-    return <RouteComponent navigator={navigator} {...route.passProps} />;
+    return (
+      <RouteComponent
+        navigator={navigator}
+        {...route.passProps}
+      />);
   }
 
   configureScene(route, routeStack){
@@ -22,25 +28,36 @@ class ReactNativeExperiment extends Component {
     return Navigator.SceneConfigs.FloatFromLeft
   }
 
-  navigationBar() {
-    const NavigationBarRouteMapper = {};
-
-    const navigationBar = (
-      <Navigator.NavigationBar
-        style={ styles.nav }
-        routeMapper={ NavigationBarRouteMapper } />
-    );
-
-    return navigationBar;
-  }
-
   render() {
+    const NavigationBarRouteMapper={
+      LeftButton: function(route, navigator, index, navState) {
+        return null;
+      },
+
+      RightButton: function(route, navigator, index, navState) {
+        return null;
+      },
+
+      Title: function(route, navigator, index, navState) {
+        return (
+          <Text>
+            {route.title}
+          </Text>
+        );
+      }
+    };
+
     return (
       <Navigator
         configureScene={ this.configureScene }
         style={{flex: 1, padding: 10}}
-        initialRoute={{component: ExperimentList}}
+        initialRoute={{component: ExperimentList, title: "Experiment List"}}
         renderScene={ this.renderScene }
+        navigationBar={
+          <Navigator.NavigationBar
+            routeMapper={NavigationBarRouteMapper}
+          />
+        }
       />
     );
   }
