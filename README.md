@@ -13,6 +13,8 @@ Here are the questions to answer, more or less in order...
 * [ ] How can we create a **slider menu** (the infamous hamburguer menu) -- even in iOS?
 * [ ] What can we do with **images**?
 * [ ] How do we customize **lists** (`ListView`) -- both items and the overall list look?
+* [ ] What kind of form components can we use, and how can we customize them?
+* [ ] What are the best practices for form validation?
 * [ ] How can we create **swipe** actions on list items?
 * [ ] What kind of **animations** can we trigger and how?
 
