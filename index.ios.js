@@ -14,6 +14,8 @@ import TabBarContainer from './ios/TabBarContainer';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import Drawer from 'react-native-drawer'
+
 class ReactNativeExperiment extends Component {
   renderScene(route, navigator) {
     const RouteComponent = route.component;
@@ -96,19 +98,34 @@ class ReactNativeExperiment extends Component {
       }
     };
 
+    closeControlPanel = () => {
+       this._drawer.close()
+     };
+
+     openControlPanel = () => {
+       this._drawer.open()
+     };
+
     return (
-      <Navigator
-        configureScene={ this.configureScene }
-        style={{flex: 1}}
-        initialRoute={{component: TabBarContainer, title: "Experiment List"}}
-        renderScene={ this.renderScene }
-        navigationBar={
-          <Navigator.NavigationBar
-            style={styles.nav}
-            routeMapper={NavigationBarRouteMapper}
-          />
-        }
-      />
+      <Drawer
+        type="static"
+        ref={(ref) => this._drawer=ref}
+        content={<View><Text> Olaaaa </Text></View>}
+        onOpen={() => console.log("YAY")}
+      >
+        <Navigator
+          configureScene={ this.configureScene }
+          style={{flex: 1}}
+          initialRoute={{component: TabBarContainer, title: "Experiment List"}}
+          renderScene={ this.renderScene }
+          navigationBar={
+            <Navigator.NavigationBar
+              style={styles.nav}
+              routeMapper={NavigationBarRouteMapper}
+            />
+          }
+        />
+      </Drawer>
     );
   }
 }
