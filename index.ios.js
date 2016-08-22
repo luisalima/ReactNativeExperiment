@@ -56,7 +56,9 @@ class ReactNativeExperiment extends Component {
 
       Title: function(route, navigator, index, navState) {
         return (
-          <Text>
+          <Text
+            style={styles.title}
+          >
             {route.title}
           </Text>
         );
@@ -71,6 +73,7 @@ class ReactNativeExperiment extends Component {
         renderScene={ this.renderScene }
         navigationBar={
           <Navigator.NavigationBar
+            style={styles.nav}
             routeMapper={NavigationBarRouteMapper}
           />
         }
@@ -78,5 +81,29 @@ class ReactNativeExperiment extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  nav: {
+    backgroundColor: '#BAA1A7',
+  },
+  leftNavButtonText: {
+    fontFamily: 'SnellRoundhand',
+    color: 'white',
+    fontSize: 15,
+    padding: 10
+  },
+  rightNavButtonText: {
+    fontFamily: 'SnellRoundhand',
+    color: 'white',
+    fontSize: 15,
+    padding: 10
+  },
+  title: {
+    paddingVertical: 10,
+    color: 'white',
+    fontFamily: 'AmericanTypewriter',
+    fontSize: 20
+  },
+});
 
 AppRegistry.registerComponent('ReactNativeExperiment', () => ReactNativeExperiment);
