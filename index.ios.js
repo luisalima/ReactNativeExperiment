@@ -6,10 +6,13 @@ import {
   Navigator,
   StyleSheet,
   TouchableHighlight,
-  Text
+  Text,
+  View
 } from 'react-native';
 
-import ExperimentList from './ios/ExperimentList'
+import ExperimentList from './ios/ExperimentList';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class ReactNativeExperiment extends Component {
   renderScene(route, navigator) {
@@ -34,9 +37,19 @@ class ReactNativeExperiment extends Component {
         if(index > 0) {
           return (
             <TouchableHighlight
+              style={styles.touchableHighlight}
               underlayColor="transparent"
               onPress={() => { if (index > 0) { navigator.pop() } }}>
-              <Text style={ styles.leftNavButtonText }>Back</Text>
+                <View
+                  style={styles.iconContainer}
+                >
+                  <Icon
+                   name="chevron-left"
+                   size={20}
+                   color="white"
+                   style={styles.leftButtonIcon}
+                 />
+                </View>
             </TouchableHighlight>)
         }
         return null;
@@ -46,10 +59,14 @@ class ReactNativeExperiment extends Component {
         if (route.onPress)
           return (
             <TouchableHighlight
+               style={styles.touchableHighlight}
                onPress={ () => route.onPress() }>
-               <Text style={ styles.rightNavButtonText }>
-                    { route.rightText || 'Right Button' }
-               </Text>
+                 <Icon
+                  name="ellipsis-v"
+                  size={20}
+                  color="white"
+                  style={styles.rightButtonIcon}
+                />
              </TouchableHighlight>);
         return null;
       },
@@ -84,7 +101,7 @@ class ReactNativeExperiment extends Component {
 
 const styles = StyleSheet.create({
   nav: {
-    backgroundColor: '#BAA1A7',
+    backgroundColor: '#BAA1A7'
   },
   leftNavButtonText: {
     fontFamily: 'SnellRoundhand',
@@ -104,6 +121,17 @@ const styles = StyleSheet.create({
     fontFamily: 'AmericanTypewriter',
     fontSize: 20
   },
+  leftButtonIcon: {
+  },
+  rightButtonIcon: {
+  },
+  iconContainer: {
+    //backgroundColor: 'red'
+  },
+  touchableHighlight: {
+    // backgroundColor: 'green',
+    padding: 12
+  }
 });
 
 AppRegistry.registerComponent('ReactNativeExperiment', () => ReactNativeExperiment);
