@@ -99,7 +99,7 @@ class ReactNativeExperiment extends Component {
     return (
       <Navigator
         configureScene={ this.configureScene }
-        style={{flex: 1, padding: 10}}
+        style={{flex: 1}}
         initialRoute={{component: ExperimentList, title: "Experiment List"}}
         renderScene={ this.renderScene }
         navigationBar={
