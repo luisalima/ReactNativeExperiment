@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     margin: 20
   },
   button: {
-    letterSpacing: 5,
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
