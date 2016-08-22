@@ -31,10 +31,26 @@ class ReactNativeExperiment extends Component {
   render() {
     const NavigationBarRouteMapper={
       LeftButton: function(route, navigator, index, navState) {
+        if(index > 0) {
+          return (
+            <TouchableHighlight
+              underlayColor="transparent"
+              onPress={() => { if (index > 0) { navigator.pop() } }}>
+              <Text style={ styles.leftNavButtonText }>Back</Text>
+            </TouchableHighlight>)
+        }
         return null;
       },
 
       RightButton: function(route, navigator, index, navState) {
+        if (route.onPress)
+          return (
+            <TouchableHighlight
+               onPress={ () => route.onPress() }>
+               <Text style={ styles.rightNavButtonText }>
+                    { route.rightText || 'Right Button' }
+               </Text>
+             </TouchableHighlight>);
         return null;
       },
 
