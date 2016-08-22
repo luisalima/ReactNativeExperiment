@@ -56,18 +56,32 @@ class ReactNativeExperiment extends Component {
       },
 
       RightButton: function(route, navigator, index, navState) {
-        if (route.onPress)
+        if (route.onPressEllipsis || route.onPressRocket)
           return (
-            <TouchableHighlight
-               style={styles.touchableHighlight}
-               onPress={ () => route.onPress() }>
-                 <Icon
-                  name="ellipsis-v"
-                  size={20}
-                  color="white"
-                  style={styles.rightButtonIcon}
-                />
-             </TouchableHighlight>);
+            <View
+              style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}
+            >
+              <TouchableHighlight
+                 style={styles.touchableHighlight}
+                 onPress={ () => {route.onPressRocket()} }>
+                   <Icon
+                    name="rocket"
+                    size={20}
+                    color="white"
+                    style={styles.rightButtonIcon}
+                  />
+               </TouchableHighlight>
+              <TouchableHighlight
+                 style={styles.touchableHighlight}
+                 onPress={ () => {route.onPressEllipsis()} }>
+                   <Icon
+                    name="ellipsis-v"
+                    size={20}
+                    color="white"
+                    style={styles.rightButtonIcon}
+                  />
+               </TouchableHighlight>
+             </View>);
         return null;
       },
 

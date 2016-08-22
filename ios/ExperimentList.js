@@ -29,17 +29,28 @@ export default class ExperimentList extends Component {
       { component: ImageExperiments, title: 'Image experiments',
         type: 'Normal' },
       { component: ModalExperiment, title: 'Modal experiment',
-        type: 'Modal', onPress: () => {
+        type: 'Modal',
+        onPressEllipsis: () => {
           Alert.alert(
-            'Alert Title',
-            'My Alert Msg',
+            'Ellipsis',
+            'Ellipsis ellipsis!',
             [
-              {text: 'Ask me later', onPress: () =>
-                console.log('Ask me later pressed')},
-              {text: 'Cancel', onPress: () =>
-                console.log('Cancel Pressed'), style: 'cancel'},
               {text: 'OK', onPress: () =>
                 console.log('OK Pressed')},
+              {text: 'Cancel', onPress: () =>
+                console.log('Cancel Pressed'), style: 'cancel'},
+            ]
+          );
+        },
+        onPressRocket: () => {
+          Alert.alert(
+            'Rocket',
+            'Rocket rocket!',
+            [
+              {text: 'OK', onPress: () =>
+                console.log('OK Pressed')},
+              {text: 'Cancel', onPress: () =>
+                console.log('Cancel Pressed'), style: 'cancel'},
             ]
           );
         }
@@ -54,7 +65,6 @@ export default class ExperimentList extends Component {
           Experiments!
         </Text>
         {this.items().map((item, index) => {
-          console.log(item);
           return (
             <TouchableHighlight
               key={index}
