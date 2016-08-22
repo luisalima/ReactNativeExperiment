@@ -7,8 +7,9 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-import FontExperiments from './FontExperiments'
-import ImageExperiments from './ImageExperiments'
+import FontExperiments from './FontExperiments';
+import ImageExperiments from './ImageExperiments';
+import ModalExperiment from './ModalExperiment';
 
 export default class ExperimentList extends Component {
   static propTypes = {
@@ -22,8 +23,12 @@ export default class ExperimentList extends Component {
 
   items() {
     return [
-      { component: FontExperiments, title: 'Font experiments' },
-      { component: ImageExperiments, title: 'Image experiments' }
+      { component: FontExperiments, title: 'Font experiments',
+        type: 'Normal' },
+      { component: ImageExperiments, title: 'Image experiments',
+        type: 'Normal' },
+      { component: ModalExperiment, title: 'Modal experiment',
+        type: 'Modal' }
     ];
   }
 

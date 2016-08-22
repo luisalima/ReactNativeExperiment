@@ -16,7 +16,10 @@ class ReactNativeExperiment extends Component {
   }
 
   configureScene(route, routeStack){
-     return Navigator.SceneConfigs.FloatFromBottom
+    if (route.type == 'Modal') {
+      return Navigator.SceneConfigs.FloatFromBottom
+    }
+    return Navigator.SceneConfigs.FloatFromLeft
   }
 
   navigationBar() {
