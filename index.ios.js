@@ -11,13 +11,30 @@ import ExperimentList from './ios/ExperimentList'
 
 class ReactNativeExperiment extends Component {
   renderScene(route, navigator) {
-    let RouteComponent = route.component;
+    const RouteComponent = route.component;
     return <RouteComponent navigator={navigator} {...route.passProps} />;
+  }
+
+  configureScene(route, routeStack){
+     return Navigator.SceneConfigs.FloatFromBottom
+  }
+
+  navigationBar() {
+    const NavigationBarRouteMapper = {};
+
+    const navigationBar = (
+      <Navigator.NavigationBar
+        style={ styles.nav }
+        routeMapper={ NavigationBarRouteMapper } />
+    );
+
+    return navigationBar;
   }
 
   render() {
     return (
       <Navigator
+        configureScene={ this.configureScene }
         style={{flex: 1, padding: 10}}
         initialRoute={{component: ExperimentList}}
         renderScene={ this.renderScene }
