@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component, PropTypes } from 'react';
 import {
   StyleSheet,
@@ -25,7 +27,11 @@ export default class TabBarContainer extends Component {
   };
 
   state = {
-    selectedTab: 'font'
+    selectedTab: 'experimentList'
+  }
+
+  _tabIsSelected(tabName: String) {
+    return tabName === this.state.selectedTab;
   }
 
   render() {
@@ -36,28 +42,25 @@ export default class TabBarContainer extends Component {
         barTintColor="darkslateblue">
 
           <TabBarIOS.Item
-            title="Font"
-              systemIcon={"featured"}
-              selected={true}
-              onPress={() => {}}
+            systemIcon={"featured"}
+            selected={this._tabIsSelected('experimentList')}
+            onPress={() => {this.setState({selectedTab: 'experimentList'})}}
           >
             <ExperimentList navigator={this.props.navigator}/>
           </TabBarIOS.Item>
 
           <TabBarIOS.Item
-            title="Font"
-              systemIcon={"bookmarks"}
-              selected={false}
-              onPress={() => {}}
+            systemIcon={"bookmarks"}
+            selected={this._tabIsSelected('font')}
+            onPress={() => {this.setState({selectedTab: 'font'})}}
           >
             <FontExperiments navigator={this.props.navigator}/>
           </TabBarIOS.Item>
 
           <TabBarIOS.Item
-            title="Image"
-              systemIcon={"contacts"}
-              selected={false}
-              onPress={() => {}}
+            systemIcon={"contacts"}
+            selected={this._tabIsSelected('image')}
+            onPress={() => {this.setState({selectedTab: 'image'})}}
           >
             <ImageExperiments navigator={this.props.navigator}/>
           </TabBarIOS.Item>
