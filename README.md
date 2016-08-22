@@ -9,7 +9,7 @@ Here are the questions to answer, more or less in order...
 * [x] How do we make **navigation** work with proper transitions?
 * [x] How do we make a custom **navbar**?
 * [x] What is the best way to integrate **icons** into a RN app?
-* [ ] How can we build a **tabbed menu**?
+* [x] How can we build a **tabbed menu**?
 * [ ] How can we create a **slider menu** (the infamous hamburguer menu) -- even in iOS?
 * [ ] What can we do with **images**?
 * [ ] How do we customize **lists** (`ListView`) -- both items and the overall list look?
