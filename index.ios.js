@@ -10,7 +10,7 @@ import {
   View
 } from 'react-native';
 
-import ExperimentList from './ios/ExperimentList';
+import TabBarContainer from './ios/TabBarContainer';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -100,7 +100,7 @@ class ReactNativeExperiment extends Component {
       <Navigator
         configureScene={ this.configureScene }
         style={{flex: 1}}
-        initialRoute={{component: ExperimentList, title: "Experiment List"}}
+        initialRoute={{component: TabBarContainer, title: "Experiment List"}}
         renderScene={ this.renderScene }
         navigationBar={
           <Navigator.NavigationBar

@@ -60,7 +60,7 @@ export default class ExperimentList extends Component {
     ];
   }
 
-  _renderContent() {
+  render() {
     return (
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <Text style={styles.title}>
@@ -78,43 +78,6 @@ export default class ExperimentList extends Component {
           );
         })}
       </ScrollView>
-    );
-  }
-
-  render() {
-    return (
-      <TabBarIOS
-        unselectedTintColor="yellow"
-        tintColor="white"
-        barTintColor="darkslateblue">
-          <TabBarIOS.Item
-            title="Blue Tab"
-              systemIcon={"bookmarks"}
-              selected={true}
-              onPress={() => {}}
-          >
-          {this._renderContent()}
-          </TabBarIOS.Item>
-
-          <TabBarIOS.Item
-            title="Blue Tab"
-              systemIcon={"contacts"}
-              selected={false}
-              onPress={() => {}}
-          >
-          {this._renderContent()}
-          </TabBarIOS.Item>
-
-          <TabBarIOS.Item
-            title="Blue Tab"
-              systemIcon={"favorites"}
-              selected={false}
-              onPress={() => {}}
-          >
-          {this._renderContent()}
-          </TabBarIOS.Item>
-
-      </TabBarIOS>
     );
   }
 }
