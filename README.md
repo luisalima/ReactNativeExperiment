@@ -16,7 +16,7 @@ Here are the questions to answer, more or less in order...
  * [x] How can we have one general slider menu from the left that is always present?
  * [x] How can we have one general slider menu from the left and right that is always present?
  * [x] Understand why, by default, swipe back is from the right (and make it swipe back from the left)?
- * [ ] How can we disable a swipe back gesture in a view with a DrawerLayout?
+ * [x] How can we disable a swipe back gesture in a view with a DrawerLayout?
  * [ ] How can we hide navigation bar when drawer is inside a scene (and inside the `Navigator` component)?
  * [ ] How can we trigger menus from menu icon presses?
 

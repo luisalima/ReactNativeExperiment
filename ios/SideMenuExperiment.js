@@ -23,7 +23,7 @@ export default class SideMenuExperiments extends Component {
   render() {
 
     const navigationView = (
-      <View style={{flex: 1, backgroundColor: '#fff'}}>
+      <View style={{flex: 1, backgroundColor: 'green'}}>
         <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>In the Drawer!</Text>
       </View>
     );

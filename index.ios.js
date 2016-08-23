@@ -26,6 +26,17 @@ class ReactNativeExperiment extends Component {
   }
 
   configureScene(route, routeStack){
+    const NoBackSwipe = {
+      ...Navigator.SceneConfigs.HorizontalSwipeJump,
+        gestures: {
+          pop: {},
+        },
+    };
+
+    if (route.title === 'Side Menu experiments') {
+      return NoBackSwipe;
+    }
+
     if (route.type == 'Modal') {
       return Navigator.SceneConfigs.FloatFromBottom
     }
