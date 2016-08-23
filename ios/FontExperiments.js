@@ -16,7 +16,7 @@ export default class FontExperiments extends Component {
 
   static defaultProps = {
     title: 'Font experiments'
-  };
+  }
 
   render() {
     return (

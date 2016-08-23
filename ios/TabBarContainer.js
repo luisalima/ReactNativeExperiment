@@ -6,7 +6,6 @@ import {
   Text,
   View,
   ScrollView,
-  TouchableHighlight,
   Alert,
   TabBarIOS
 } from 'react-native';
@@ -24,7 +23,7 @@ export default class TabBarContainer extends Component {
 
   static defaultProps = {
     title: 'Font experiments'
-  };
+  }
 
   state = {
     selectedTab: 'experimentList'
@@ -41,29 +40,29 @@ export default class TabBarContainer extends Component {
         tintColor="white"
         barTintColor="darkslateblue">
 
-          <TabBarIOS.Item
-            systemIcon={"featured"}
-            selected={this._tabIsSelected('experimentList')}
-            onPress={() => {this.setState({selectedTab: 'experimentList'})}}
-          >
-            <ExperimentList navigator={this.props.navigator}/>
-          </TabBarIOS.Item>
+        <TabBarIOS.Item
+          systemIcon={"featured"}
+          selected={this._tabIsSelected('experimentList')}
+          onPress={() => {this.setState({selectedTab: 'experimentList'})}}
+        >
+          <ExperimentList navigator={this.props.navigator}/>
+        </TabBarIOS.Item>
 
-          <TabBarIOS.Item
-            systemIcon={"bookmarks"}
-            selected={this._tabIsSelected('font')}
-            onPress={() => {this.setState({selectedTab: 'font'})}}
-          >
-            <FontExperiments navigator={this.props.navigator}/>
-          </TabBarIOS.Item>
+        <TabBarIOS.Item
+          systemIcon={"bookmarks"}
+          selected={this._tabIsSelected('font')}
+          onPress={() => {this.setState({selectedTab: 'font'})}}
+        >
+          <FontExperiments navigator={this.props.navigator}/>
+        </TabBarIOS.Item>
 
-          <TabBarIOS.Item
-            systemIcon={"contacts"}
-            selected={this._tabIsSelected('image')}
-            onPress={() => {this.setState({selectedTab: 'image'})}}
-          >
-            <ImageExperiments navigator={this.props.navigator}/>
-          </TabBarIOS.Item>
+        <TabBarIOS.Item
+          systemIcon={"contacts"}
+          selected={this._tabIsSelected('image')}
+          onPress={() => {this.setState({selectedTab: 'image'})}}
+        >
+          <ImageExperiments navigator={this.props.navigator}/>
+        </TabBarIOS.Item>
 
       </TabBarIOS>
     );
