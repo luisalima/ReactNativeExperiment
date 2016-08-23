@@ -181,7 +181,7 @@ class ReactNativeExperiment extends Component {
       <Drawer
         type="static"
         openDrawerOffset={100}
-        closedDrawerOffset={-10}
+        closedDrawerOffset={0}
         styles={drawerLeftStyles}
         tweenHandler={Drawer.tweenPresets.parallax}
         ref={(ref) => this._drawerLeft = ref}
@@ -193,7 +193,7 @@ class ReactNativeExperiment extends Component {
         <Drawer
           type="static"
           openDrawerOffset={100}
-          closedDrawerOffset={-10}
+          closedDrawerOffset={0}
           styles={drawerRightStyles}
           tweenHandler={Drawer.tweenPresets.parallax}
           ref={(ref) => this._drawerRight = ref}
