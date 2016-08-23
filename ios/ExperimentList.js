@@ -14,6 +14,7 @@ import {
 import FontExperiments from './FontExperiments';
 import ImageExperiments from './ImageExperiments';
 import ModalExperiment from './ModalExperiment';
+import SideMenuExperiment from './SideMenuExperiment';
 
 export default class ExperimentList extends Component {
   static propTypes = {
@@ -58,7 +59,9 @@ export default class ExperimentList extends Component {
             ]
           );
         }
-      }
+      },
+      { component: SideMenuExperiment, title: 'Side Menu experiments',
+        type: 'Normal' },
     ];
   }
 

@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-import DrawerLayout from 'react-native-drawer-layout';
 
 import TabBarContainer from './ios/TabBarContainer';
 
@@ -99,41 +98,19 @@ class ReactNativeExperiment extends Component {
       }
     };
 
-    const navigationView = (
-      <View style={{flex: 1, backgroundColor: '#fff'}}>
-        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer!</Text>
-      </View>
-    );
-
-    const navigationView2 = (
-      <View style={{flex: 1, backgroundColor: 'red'}}>
-        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer 2!</Text>
-      </View>
-    );
-
     return (
-      <DrawerLayout
-        drawerWidth={300}
-        drawerPosition={DrawerLayout.positions.Left}
-        renderNavigationView={() => navigationView}>
-        <DrawerLayout
-          drawerWidth={300}
-          drawerPosition={DrawerLayout.positions.Right}
-          renderNavigationView={() => navigationView2}>
-          <Navigator
-            configureScene={ this.configureScene }
-            style={{flex: 1}}
-            initialRoute={{component: TabBarContainer, title: "Experiment List"}}
-            renderScene={ this.renderScene }
-            navigationBar={
-              <Navigator.NavigationBar
-                style={styles.nav}
-                routeMapper={NavigationBarRouteMapper}
-              />
-            }
+      <Navigator
+        configureScene={ this.configureScene }
+        style={{flex: 1}}
+        initialRoute={{component: TabBarContainer, title: "Experiment List"}}
+        renderScene={ this.renderScene }
+        navigationBar={
+          <Navigator.NavigationBar
+            style={styles.nav}
+            routeMapper={NavigationBarRouteMapper}
           />
-        </DrawerLayout>
-      </DrawerLayout>
+        }
+      />
     );
   }
 }
