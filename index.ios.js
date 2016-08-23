@@ -152,9 +152,11 @@ class ReactNativeExperiment extends Component {
   }
 
   renderNavigatorWrapper() {
-    const MainView = () => {
+    const MainView = ({navigator}) => {
       return (
-        <TabBarContainer />
+        <TabBarContainer
+          navigator={navigator}
+        />
       );
     };
 
