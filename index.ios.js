@@ -29,7 +29,7 @@ class ReactNativeExperiment extends Component {
     if (route.type == 'Modal') {
       return Navigator.SceneConfigs.FloatFromBottom
     }
-    return Navigator.SceneConfigs.FloatFromLeft
+    return Navigator.SceneConfigs.FloatFromRight
   }
 
   render() {
