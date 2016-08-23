@@ -14,6 +14,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import TabBarContainer from './ios/TabBarContainer';
 
+class OurNavigator extends Navigator.NavigationBar {
+  render() {
+    return super.render();
+  }
+}
+
 class ReactNativeExperiment extends Component {
   renderScene(route, navigator) {
     const RouteComponent = route.component;
@@ -116,7 +122,7 @@ class ReactNativeExperiment extends Component {
         initialRoute={{component: TabBarContainer, title: "Experiment List"}}
         renderScene={ this.renderScene }
         navigationBar={
-          <Navigator.NavigationBar
+          <OurNavigator
             style={styles.nav}
             routeMapper={NavigationBarRouteMapper}
           />
