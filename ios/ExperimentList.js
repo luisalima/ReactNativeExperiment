@@ -100,9 +100,6 @@ const styles = StyleSheet.create({
     margin: 20
   },
   button: {
-    fontWeight: 'bold',
-    fontSize: 15,
-    textAlign: 'center',
     padding: 5,
     margin: 5,
     borderColor: '#DDD',
