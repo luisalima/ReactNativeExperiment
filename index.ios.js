@@ -16,6 +16,16 @@ import TabBarContainer from './ios/TabBarContainer';
 
 class OurNavigator extends Navigator.NavigationBar {
   render() {
+    const routes = this.props.navState.routeStack;
+
+    if (routes.length) {
+      const route = routes[routes.length - 1];
+
+      if (route.navigationBarHidden) {
+        return null;
+      }
+    }
+
     return super.render();
   }
 }
@@ -125,6 +135,7 @@ class ReactNativeExperiment extends Component {
           <OurNavigator
             style={styles.nav}
             routeMapper={NavigationBarRouteMapper}
+            hidden
           />
         }
       />

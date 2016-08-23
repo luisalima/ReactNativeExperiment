@@ -61,7 +61,7 @@ export default class ExperimentList extends Component {
         }
       },
       { component: SideMenuExperiment, title: 'Side Menu experiments',
-        type: 'Normal' },
+        type: 'Normal', navigationBarHidden: true},
     ];
   }
 
