@@ -16,7 +16,7 @@ export default class ImageExperiments extends Component {
 
   static defaultProps = {
     title: 'Image experiments'
-  };
+  }
 
   render() {
     return (

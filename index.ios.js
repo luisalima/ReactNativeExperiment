@@ -10,9 +10,10 @@ import {
   View
 } from 'react-native';
 
-import TabBarContainer from './ios/TabBarContainer';
-
 import Icon from 'react-native-vector-icons/FontAwesome';
+import DrawerLayout from 'react-native-drawer-layout';
+
+import TabBarContainer from './ios/TabBarContainer';
 
 class ReactNativeExperiment extends Component {
   renderScene(route, navigator) {
@@ -21,7 +22,8 @@ class ReactNativeExperiment extends Component {
       <RouteComponent
         navigator={navigator}
         {...route.passProps}
-      />);
+      />
+    );
   }
 
   configureScene(route, routeStack){
@@ -40,17 +42,18 @@ class ReactNativeExperiment extends Component {
               style={styles.touchableHighlight}
               underlayColor="transparent"
               onPress={() => { if (index > 0) { navigator.pop() } }}>
-                <View
-                  style={styles.iconContainer}
-                >
-                  <Icon
-                   name="chevron-left"
-                   size={20}
-                   color="white"
-                   style={styles.leftButtonIcon}
-                 />
-                </View>
-            </TouchableHighlight>)
+              <View
+                style={styles.iconContainer}
+              >
+                <Icon
+                  name="chevron-left"
+                  size={20}
+                  color="white"
+                  style={styles.leftButtonIcon}
+                />
+              </View>
+            </TouchableHighlight>
+          )
         }
         return null;
       },
@@ -62,26 +65,26 @@ class ReactNativeExperiment extends Component {
               style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}
             >
               <TouchableHighlight
-                 style={styles.touchableHighlight}
-                 onPress={ () => {route.onPressRocket()} }>
-                   <Icon
-                    name="rocket"
-                    size={20}
-                    color="white"
-                    style={styles.rightButtonIcon}
-                  />
-               </TouchableHighlight>
+                style={styles.touchableHighlight}
+                onPress={ () => {route.onPressRocket()} }>
+                <Icon
+                  name="rocket"
+                  size={20}
+                  color="white"
+                  style={styles.rightButtonIcon}
+                />
+              </TouchableHighlight>
               <TouchableHighlight
-                 style={styles.touchableHighlight}
-                 onPress={ () => {route.onPressEllipsis()} }>
-                   <Icon
-                    name="ellipsis-v"
-                    size={20}
-                    color="white"
-                    style={styles.rightButtonIcon}
-                  />
-               </TouchableHighlight>
-             </View>);
+                style={styles.touchableHighlight}
+                onPress={ () => {route.onPressEllipsis()} }>
+                <Icon
+                  name="ellipsis-v"
+                  size={20}
+                  color="white"
+                  style={styles.rightButtonIcon}
+                />
+              </TouchableHighlight>
+            </View>);
         return null;
       },
 
@@ -96,21 +99,48 @@ class ReactNativeExperiment extends Component {
       }
     };
 
+    const navigationView = (
+      <View style={{flex: 1, backgroundColor: '#fff'}}>
+        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer!</Text>
+      </View>
+    );
+
+    const navigationView2 = (
+      <View style={{flex: 1, backgroundColor: 'red'}}>
+        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer 2!</Text>
+      </View>
+    );
+
     return (
-      <Navigator
-        configureScene={ this.configureScene }
-        style={{flex: 1}}
-        initialRoute={{component: TabBarContainer, title: "Experiment List"}}
-        renderScene={ this.renderScene }
-        navigationBar={
-          <Navigator.NavigationBar
-            style={styles.nav}
-            routeMapper={NavigationBarRouteMapper}
+      <DrawerLayout
+        drawerWidth={300}
+        drawerPosition={DrawerLayout.positions.Left}
+        renderNavigationView={() => navigationView}>
+        <DrawerLayout
+          drawerWidth={300}
+          drawerPosition={DrawerLayout.positions.Right}
+          renderNavigationView={() => navigationView2}>
+          <Navigator
+            configureScene={ this.configureScene }
+            style={{flex: 1}}
+            initialRoute={{component: TabBarContainer, title: "Experiment List"}}
+            renderScene={ this.renderScene }
+            navigationBar={
+              <Navigator.NavigationBar
+                style={styles.nav}
+                routeMapper={NavigationBarRouteMapper}
+              />
+            }
           />
-        }
-      />
+        </DrawerLayout>
+      </DrawerLayout>
     );
   }
+}
+
+const drawerStyles = {
+  drawer: { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
+  main: {paddingLeft: 3},
 }
 
 const styles = StyleSheet.create({
