@@ -21,10 +21,16 @@ Here are the questions to answer, more or less in order...
  * [ ] How can we trigger menus from menu icon presses?
 
 * [ ] What can we do with **images**?
+
 * [ ] How do we customize **lists** (`ListView`) -- both items and the overall list look?
-* [ ] What kind of form components can we use, and how can we customize them?
-* [ ] What are the best practices for form validation?
 * [ ] How can we create **swipe** actions on list items?
+
+* [ ] What kind of form components can we use, and how can we customize them?
+  * [ ] In particular, how can we create a Calendar component that is mobile friendly?
+  
+* [ ] What are the best practices for form validation?
+* [ ] How can we connect to native components?
+
 * [ ] What kind of **animations** can we trigger and how?
 
 In summary, this repo aims to answer the question of how to customize RN elements as much as possible from a styling perspective.
