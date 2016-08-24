@@ -189,6 +189,7 @@ class ReactNativeExperiment extends Component {
         panOpenMask={0.5}
         side="left"
         tapToClose
+        negotiatePan
       >
         <Drawer
           type="static"
@@ -201,6 +202,7 @@ class ReactNativeExperiment extends Component {
           panOpenMask={0.5}
           side="right"
           tapToClose
+          negotiatePan
         >
           {this.renderNavigatorWrapper()}
         </Drawer>
