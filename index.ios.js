@@ -56,19 +56,20 @@ class ReactNativeExperiment extends Component {
             <TouchableHighlight
               style={styles.touchableHighlight}
               underlayColor="transparent"
-              onPress={() => { if (index > 0) { navigator.pop() } }}>
-                <View
-                  style={styles.iconContainer}
-                >
-                  <Icon
-                   name="chevron-left"
-                   size={20}
-                   color="white"
-                   style={styles.leftButtonIcon}
-                 />
-                </View>
+              onPress={() => { if (index > 0) { navigator.pop() } }}
+            >
+              <View
+                style={styles.iconContainer}
+              >
+                <Icon
+                 name="chevron-left"
+                 size={20}
+                 color="white"
+                 style={styles.leftButtonIcon}
+               />
+              </View>
             </TouchableHighlight>
-          )
+          );
         }
 
         return (
