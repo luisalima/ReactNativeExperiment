@@ -9,6 +9,7 @@ import {
   ListView
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
 import Swipeout from 'react-native-swipeout';
 
 const listItems = [
@@ -19,9 +20,19 @@ const listItems = [
   'row38', 'row39', 'row40', 'row41', 'row42', 'row43', 'row44', 'row45', 'row46'
 ];
 
+const SwipeableButton = () =>
+  <View>
+    <Text>Ninjas</Text>
+    <Icon
+       name="rocket"
+       size={20}
+       color="white"
+    />
+  </View>;
+
 const swipeoutBtns = [
   {
-    text: 'Button'
+    component: SwipeableButton()
   }
 ];
 
