@@ -179,7 +179,7 @@ class ReactNativeExperiment extends Component {
   render() {
     return (
       <Drawer
-        type="static"
+        type="displace"
         openDrawerOffset={100}
         closedDrawerOffset={0}
         styles={drawerLeftStyles}
@@ -192,7 +192,7 @@ class ReactNativeExperiment extends Component {
         negotiatePan
       >
         <Drawer
-          type="static"
+          type="displace"
           openDrawerOffset={100}
           closedDrawerOffset={0}
           styles={drawerRightStyles}
