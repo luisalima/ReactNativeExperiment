@@ -17,13 +17,15 @@ Here are the questions to answer, more or less in order...
  * [x] How can we have one general slider menu from the left and right that is always present?
  * [x] Understand why, by default, swipe back is from the right (and make it swipe back from the left)?
  * [x] How can we disable a swipe back gesture in a view with a DrawerLayout?
- * [ ] How can we hide navigation bar when drawer is inside a scene (and inside the `Navigator` component)?
+ * [x] How can we hide navigation bar when drawer is inside a scene (and inside the `Navigator` component)?
  * [x] How can we trigger menus from menu icon presses?
+ * [ ] How can we address the performance issues when rendering transitions
+     between scenes?
+
+ * [ ] How do we customize **lists** (`ListView`) -- both items and the overall list look?
+ * [ ] How can we create **swipe** actions on list items?
 
 * [ ] What can we do with **images**?
-
-* [ ] How do we customize **lists** (`ListView`) -- both items and the overall list look?
-* [ ] How can we create **swipe** actions on list items?
 
 * [ ] What kind of form components can we use, and how can we customize them?
   * [ ] In particular, how can we create a Calendar component that is mobile friendly?
