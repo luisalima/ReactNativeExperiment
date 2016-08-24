@@ -15,6 +15,7 @@ import FontExperiments from './FontExperiments';
 import ImageExperiments from './ImageExperiments';
 import ModalExperiment from './ModalExperiment';
 import HideNavigationBarExperiment from '../HideNavigationBarExperiment';
+import ListViewExperiment from './ListViewExperiment';
 
 export default class ExperimentList extends Component {
   static propTypes = {
@@ -62,7 +63,8 @@ export default class ExperimentList extends Component {
       },
       { component: HideNavigationBarExperiment, title: 'Hide Navigation Bar Experiment',
         type: 'Normal', navigationBarHidden: true
-      }
+      },
+      { component: ListViewExperiment, title: 'List View Experiment' }
     ];
   }
 
