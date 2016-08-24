@@ -16,18 +16,18 @@ export default class HideNavigationBarExperiment extends Component {
 
   static defaultProps = {
     title: 'Hide Navigation Bar Experiment'
-  };
+  }
 
   render() {
     return (
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <Text style={styles.title}>
           The navigation bar should be hidden in this view!
+        </Text>
         <Text
-          onPress={() => {navigator.pop()}}
+          onPress={() => {this.props.navigator.pop()}}
         >
           Click here to go back!
-        </Text>
         </Text>
       </ScrollView>
     )
