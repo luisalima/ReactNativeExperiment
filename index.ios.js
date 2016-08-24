@@ -186,7 +186,6 @@ class ReactNativeExperiment extends Component {
           <OurNavigator
             style={styles.nav}
             routeMapper={this.routeMapper()}
-            hidden
           />
         }
       />
