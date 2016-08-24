@@ -15,6 +15,22 @@ import TabBarContainer from './ios/TabBarContainer';
 import Drawer from 'react-native-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+class OurNavigator extends Navigator.NavigationBar {
+  render() {
+    const routes = this.props.navState.routeStack;
+
+    if (routes.length) {
+      const route = routes[routes.length - 1];
+
+      if (route.navigationBarHidden) {
+        return null;
+      }
+    }
+
+    return super.render();
+  }
+}
+
 class ReactNativeExperiment extends Component {
   configureScene(route, routeStack) {
     return Navigator.SceneConfigs.FloatFromRight
@@ -167,9 +183,10 @@ class ReactNativeExperiment extends Component {
         initialRoute={{component: MainView, title: "Experiment List"}}
         renderScene={ this.renderScene }
         navigationBar={
-          <Navigator.NavigationBar
+          <OurNavigator
             style={styles.nav}
             routeMapper={this.routeMapper()}
+            hidden
           />
         }
       />
