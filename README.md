@@ -13,9 +13,9 @@ Here are the questions to answer, more or less in order...
 
 * [x] What is the best way to integrate **icons** into a RN app?
 
-* [ ] How can we build a **tabbed menu**?
+* [x] How can we build a **tabbed menu**?
   * [x] How can we build a tabbed menu with native icons?
-  * [ ] How can we build a tabbed menu with custom icons?
+  * [x] How can we build a tabbed menu with custom icons?
 
 * [ ] How can we create a **slider menu** (the infamous hamburguer menu) -- even in iOS?
  * [x] How can we have one general slider menu from the left that is always present?
