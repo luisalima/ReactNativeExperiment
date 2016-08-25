@@ -40,9 +40,11 @@ Here are the questions to answer, more or less in order...
 
 ### Nice to have...
 
+* [ ] How can we connect to native components?
+* [ ] How to use external package managers such as CocoaPods in React Native?
+
 * [ ] How can we create graphics and plots (is there an alternative to d3.js for react native)?
 * [ ] What are the best practices for form validation?
-* [ ] How can we connect to native components?
 
 * [ ] What kind of **animations** can we trigger and how?
 
