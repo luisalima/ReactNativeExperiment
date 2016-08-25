@@ -11,6 +11,8 @@ import {
   TabBarIOS
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import FontExperiments from './FontExperiments';
 import ImageExperiments from './ImageExperiments';
 import ModalExperiment from './ModalExperiment';
@@ -41,29 +43,29 @@ export default class TabBarContainer extends Component {
         tintColor="white"
         barTintColor="darkslateblue">
 
-          <TabBarIOS.Item
+          <Icon.TabBarItemIOS
             systemIcon={"featured"}
             selected={this._tabIsSelected('experimentList')}
             onPress={() => {this.setState({selectedTab: 'experimentList'})}}
           >
             <ExperimentList navigator={this.props.navigator}/>
-          </TabBarIOS.Item>
+          </Icon.TabBarItemIOS>
 
-          <TabBarIOS.Item
+          <Icon.TabBarItemIOS
             systemIcon={"bookmarks"}
             selected={this._tabIsSelected('font')}
             onPress={() => {this.setState({selectedTab: 'font'})}}
           >
             <FontExperiments navigator={this.props.navigator}/>
-          </TabBarIOS.Item>
+          </Icon.TabBarItemIOS>
 
-          <TabBarIOS.Item
+          <Icon.TabBarItemIOS
             systemIcon={"contacts"}
             selected={this._tabIsSelected('image')}
             onPress={() => {this.setState({selectedTab: 'image'})}}
           >
             <ImageExperiments navigator={this.props.navigator}/>
-          </TabBarIOS.Item>
+          </Icon.TabBarItemIOS>
 
       </TabBarIOS>
     );
