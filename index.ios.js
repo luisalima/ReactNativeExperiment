@@ -220,6 +220,7 @@ class ReactNativeExperiment extends Component {
           side="right"
           tapToClose
           negotiatePan
+          disabled
         >
           {this.renderNavigatorWrapper()}
         </Drawer>
