@@ -13,6 +13,7 @@
     "react": "15.2.1",
     "react-native": "0.31.0",
     "react-native-drawer": "^2.2.6",
+    "react-native-svg": "^4.1.5",
     "react-native-swipeout": "^2.0.12",
     "react-native-vector-icons": "^2.0.3"
   },
