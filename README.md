@@ -24,27 +24,37 @@ Here are the questions to answer, more or less in order...
  * [x] How can we disable a swipe back gesture in a view with a DrawerLayout?
  * [x] How can we hide navigation bar when drawer is inside a scene (and inside the `Navigator` component)?
  * [x] How can we trigger menus from menu icon presses?
- * [ ] How can we address the performance issues when rendering transitions
+ * [ ] How can we address the performance/flicker issues when rendering transitions
      between scenes?
 
-* [ ] How do we customize **lists** (`ListView`) -- both items and the overall list look?
+* [x] How do we customize **lists** (`ListView`) -- both items and the overall list look?
   * [x] How can we create **swipe** actions on list items?
-  * [ ] How can we add an images to a list item?
+  * [x] How can we add an image to a list item?
+
+* [x] Image experiments
+  * [x] Local image
+  * [x] Remote image
+  * [x] Image manipulation - clip mask
+
+* [x] Experiment with SVG in react native
+
+* [ ] Create a "filters/settings" view that is triggered from the navigation bar
+  * [ ] Add form components to "filters/settings" view
 
 * [ ] What kind of form components can we use, and how can we customize them?
   * [ ] In particular, how can we create a Calendar component that is mobile
    friendly (can we use [this native library](https://github.com/jivesoftware/PDTSimpleCalendar))?
 
-* [ ] Create a "filters/settings" view that is triggered from the navigation bar
-  * [ ] Add form components to "filters/settings" view
-
-### Nice to have...
+### Nice to have in the future...
 
 * [ ] How can we connect to native components?
 * [ ] How to use external package managers such as CocoaPods in React Native?
 
 * [ ] How can we create graphics and plots (is there an alternative to d3.js for react native)?
 * [ ] What are the best practices for form validation?
+
+* [ ] How to import photos from camera roll and crop them?
+* [ ] How to access the microphone, camera, and location of the user?
 
 * [ ] What kind of **animations** can we trigger and how?
 
@@ -53,7 +63,8 @@ Here are the questions to answer, more or less in order...
 
 * [React native spinkit](https://github.com/maxs15/react-native-spinkit)
 * [React native svg](https://github.com/react-native-community/react-native-svg)
-* React native Art (apparently now in core) - and a nice [tutorial](http://browniefed.com/blog/react-native-animated-with-react-art-firework-show/)
+* [React native image crop picker](https://github.com/ivpusic/react-native-image-crop-picker)
+* React native Art (apparently now in core) - and a nice [tutorial](http://browniefed.com/blog/react-native-animated-with-react-art-firework-show/) / [another nice tutorial](http://hswolff.com/blog/react-native-art-and-d3/)
 * [A list of open source quality native components for iOS](https://medium.com/app-coder-io/27-ios-open-source-libraries-to-skyrocket-your-development-301b67d3124c#.w3gsnhw7d)
 
 ## TL;DR

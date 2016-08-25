@@ -10,6 +10,10 @@ import {
   Image
 } from 'react-native';
 
+import Svg,{
+    Polygon,
+  } from 'react-native-svg';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Swipeout from 'react-native-swipeout';
 
@@ -59,6 +63,26 @@ export default class ListViewExperiment extends Component {
         <View style={styles.row}>
           <Text style={styles.text}>{ data }</Text>
           <Image source={require('../images/cat1.png')} style={styles.catStyle} resizeMode="contain" />
+          <Svg
+            height="40"
+            width="40"
+            style={{marginLeft: -60}}
+          >
+            <Polygon
+                points="0,0 20,0 0,40 "
+                fill="#EEE"
+            />
+          </Svg>
+          <Svg
+            height="40"
+            width="40"
+            style={{marginLeft: 0}}
+          >
+            <Polygon
+                points="20,0 0,40 20,40"
+                fill="#EEE"
+            />
+          </Svg>
         </View>
       </Swipeout>
     );

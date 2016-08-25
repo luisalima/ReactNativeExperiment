@@ -5,8 +5,13 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView
+  ScrollView,
+  Image
 } from 'react-native';
+
+import Svg,{
+    Circle,
+  } from 'react-native-svg';
 
 export default class ImageExperiments extends Component {
   static propTypes = {
@@ -22,8 +27,40 @@ export default class ImageExperiments extends Component {
     return (
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <Text style={styles.title}>
-          This will be Image Experiments! Nothing to see here yet, move along...
+          This is Image Experiments!
         </Text>
+
+        <View>
+          <Text>
+            This is a remote image...
+          </Text>
+          <Image
+            source={{
+              uri: 'https://facebook.github.io/react/img/logo_og.png',
+            }}
+            style={styles.imageStyle}
+            resizeMode="contain"
+            onLoadStart={(e) => console.log(e)}
+            onLoadEnd={(e) => console.log(e)}
+          />
+        </View>
+
+        <View>
+          <Text>
+            This is an svg, generated on the fly!
+          </Text>
+          <Svg
+            height="100"
+            width="100"
+          >
+            <Circle
+              cx="50"
+              cy="50"
+              r="50"
+              fill="pink"
+            />
+          </Svg>
+        </View>
       </ScrollView>
     )
   }
@@ -42,5 +79,9 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: 'bold',
     fontSize: 20
+  },
+  imageStyle: {
+    width: 100,
+    height: 100
   }
 });
