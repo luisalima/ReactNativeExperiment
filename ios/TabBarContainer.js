@@ -44,7 +44,8 @@ export default class TabBarContainer extends Component {
         barTintColor="darkslateblue">
 
           <Icon.TabBarItemIOS
-            systemIcon={"featured"}
+            iconName={"hotel"}
+            title={"Home"}
             selected={this._tabIsSelected('experimentList')}
             onPress={() => {this.setState({selectedTab: 'experimentList'})}}
           >
@@ -52,7 +53,8 @@ export default class TabBarContainer extends Component {
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
-            systemIcon={"bookmarks"}
+            iconName={"pencil"}
+            title={"Fonts"}
             selected={this._tabIsSelected('font')}
             onPress={() => {this.setState({selectedTab: 'font'})}}
           >
@@ -60,7 +62,8 @@ export default class TabBarContainer extends Component {
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
-            systemIcon={"contacts"}
+            iconName={"camera"}
+            title={"Images"}
             selected={this._tabIsSelected('image')}
             onPress={() => {this.setState({selectedTab: 'image'})}}
           >
