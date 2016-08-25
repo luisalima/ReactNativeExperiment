@@ -6,7 +6,8 @@ import {
   Text,
   View,
   ScrollView,
-  ListView
+  ListView,
+  Image
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -52,11 +53,12 @@ export default class ListViewExperiment extends Component {
     this.state = { dataSource: this.ds.cloneWithRows(listItems) };
   }
 
-  renderRow(data) {
+  renderRow(data: String) {
     return (
       <Swipeout right={swipeoutBtns}>
         <View style={styles.row}>
           <Text style={styles.text}>{ data }</Text>
+          <Image source={require('../images/cat1.png')} style={styles.catStyle} resizeMode="contain" />
         </View>
       </Swipeout>
     );
@@ -92,5 +94,9 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: 'bold'
+  },
+  catStyle: {
+    width: 60,
+    height: 60
   }
 });
