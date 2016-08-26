@@ -10,10 +10,13 @@ import {
   View
 } from 'react-native';
 
-import TabBarContainer from './ios/TabBarContainer';
+import TabBarContainer from './src/TabBarContainer';
+import SideFilters from './src/SideFilters';
 
 import Drawer from 'react-native-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import Routes from './src/Routes';
 
 class OurNavigator extends Navigator.NavigationBar {
   render() {
@@ -33,7 +36,10 @@ class OurNavigator extends Navigator.NavigationBar {
 
 class ReactNativeExperiment extends Component {
   configureScene(route, routeStack) {
-    return Navigator.SceneConfigs.FloatFromRight
+    if(route.type === 'sideFilters') {
+      return Navigator.SceneConfigs.FloatFromBottom;
+    }
+    return Navigator.SceneConfigs.FloatFromRight;
   }
 
   renderScene(route, navigator) {
@@ -122,24 +128,28 @@ class ReactNativeExperiment extends Component {
            );
          }
 
-         return (
-           <TouchableHighlight
-             style={styles.touchableHighlight}
-             underlayColor="transparent"
-             onPress={() => that._drawerRight.open()}
-           >
-             <View
-               style={styles.iconContainer}
-             >
-               <Icon
-                name="ellipsis-v"
-                size={20}
-                color="white"
-                style={styles.rightButtonIcon}
-              />
-             </View>
-           </TouchableHighlight>
-         );
+         console.log(route);
+         if (!route.hideRightNavigationButton) {
+           return (
+               <TouchableHighlight
+                 style={styles.touchableHighlight}
+                 underlayColor="transparent"
+                 onPress={() => navigator.push(Routes.get('SideFilters'))}
+               >
+                 <View
+                   style={styles.iconContainer}
+                 >
+                   <Icon
+                    name="ellipsis-v"
+                    size={20}
+                    color="white"
+                    style={styles.rightButtonIcon}
+                  />
+                 </View>
+               </TouchableHighlight>
+           );
+         }
+       return null;
       },
 
       Title: function(route, navigator, index, navState) {
@@ -208,22 +218,7 @@ class ReactNativeExperiment extends Component {
         tapToClose
         negotiatePan
       >
-        <Drawer
-          type="displace"
-          openDrawerOffset={100}
-          closedDrawerOffset={0}
-          styles={drawerRightStyles}
-          tweenHandler={Drawer.tweenPresets.parallax}
-          ref={(ref) => this._drawerRight = ref}
-          content={this.controlPanelRight()}
-          panOpenMask={0.5}
-          side="right"
-          tapToClose
-          negotiatePan
-          disabled
-        >
-          {this.renderNavigatorWrapper()}
-        </Drawer>
+        {this.renderNavigatorWrapper()}
       </Drawer>
     );
   }
