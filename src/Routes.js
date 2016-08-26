@@ -1,3 +1,8 @@
+import React from 'react';
+import {
+  Alert
+} from 'react-native';
+
 import FontExperiments from './FontExperiments';
 import ImageExperiments from './ImageExperiments';
 import ModalExperiment from './ModalExperiment';
